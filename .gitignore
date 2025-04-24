@@ -24,3 +24,6 @@ venv.bak/
 # macOS
 .DS_Store
 
+# large files
+model_save/*.pt
+model_save/*.pth

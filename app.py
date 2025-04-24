@@ -21,16 +21,22 @@ import torch
 from transformers import AutoTokenizer, BertConfig
 
 # Setting Up Model & Tokenizer
+print("Loading model...")
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 config = BertConfig.from_pretrained(Settings.MODEL_NAME)
 pt_model = SentimentModel(config)
 pt_model = torch.load(Settings.MODEL_SAVE2, map_location=device)
+print("Model loaded successfully.")
 
+print("Loading tokenizer...")
 path = "HooshvareLab/bert-fa-base-uncased-sentiment-snappfood"
 tokenizer = AutoTokenizer.from_pretrained(path)
+print("Tokenizer loaded successfully.")
 
-# Initializing FastAPI & Setting Up Templates
+# Initializing FastAPI
 app = FastAPI()
+
+# Setting Up Templates
 templates = Jinja2Templates(directory="templates")
 
 # Configuring CORS

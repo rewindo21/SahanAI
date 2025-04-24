@@ -18,7 +18,7 @@ COPY . .
 
 # Download the zip file from Google Drive and extract it
 RUN gdown --id 14aB1TXaUzpDqAyp_cBIgpInIRUzSW3dL -O model_save.zip \
-    && unzip model_save.zip -d model_save \
+    && unzip model_save.zip -d . \
     && rm model_save.zip
 
 # Run the app

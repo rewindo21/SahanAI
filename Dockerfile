@@ -22,4 +22,4 @@ RUN gdown --id 14aB1TXaUzpDqAyp_cBIgpInIRUzSW3dL -O model_save.zip \
     && rm model_save.zip
 
 # Run the app
-CMD ["uvicorn", "app:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

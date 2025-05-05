@@ -30,7 +30,7 @@ print("Model loaded successfully.")
 
 print("Loading tokenizer...")
 path = "HooshvareLab/bert-fa-base-uncased-sentiment-snappfood"
-tokenizer = AutoTokenizer.from_pretrained(path)
+tokenizer = AutoTokenizer.from_pretrained(path, use_fast=True)
 print("Tokenizer loaded successfully.")
 
 # Initializing FastAPI
